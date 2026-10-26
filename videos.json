@@ -7,7 +7,8 @@
       "link": "https://www.youtube.com/watch?v=OqCyNIrPjZ4",
       "start": 0,
       "end": null,
-      "mode": "required"
+      "mode": "required",
+      "where": "Only used by video-embed-test.html"
     },
     "hs-ess1-light/l1": {
       "quest": "Messages in Light (HS-ESS1 light)",
@@ -18,6 +19,46 @@
       "start": 0,
       "mode": "required",
       "note": "Crest, trough, wavelength, frequency and amplitude, the words you just met."
+    },
+    "hs-ess1-light/l2": {
+      "quest": "Messages in Light (HS-ESS1 light)",
+      "where": "Level 2, card 1: The whole family of light",
+      "title": "What is the Electromagnetic Spectrum",
+      "link": "https://www.youtube.com/watch?v=7F6fT5p5oFk",
+      "channel": "MooMooMath and Science",
+      "start": 0,
+      "mode": "required",
+      "note": "The seven kinds of light, from radio waves to gamma rays."
+    },
+    "hs-ess1-light/l3": {
+      "quest": "Messages in Light (HS-ESS1 light)",
+      "where": "Level 3, card 1: Electrons jump up, then fall back down",
+      "title": "The Bohr Atom",
+      "link": "https://www.youtube.com/watch?v=GhAn8xZQ-d8",
+      "channel": "Bozeman Science",
+      "start": 0,
+      "mode": "optional",
+      "note": "Electrons jumping between energy levels. It goes a little beyond this level."
+    },
+    "hs-ess1-light/l4": {
+      "quest": "Messages in Light (HS-ESS1 light)",
+      "where": "Level 4, card 1: A pattern only one element can make",
+      "title": "Emission and Absorption Spectra",
+      "link": "https://www.youtube.com/watch?v=1uPyq63aRvg",
+      "channel": "Bozeman Science",
+      "start": 0,
+      "mode": "optional",
+      "note": "Bright lines, dark lines, and why every element has its own pattern."
+    },
+    "hs-ess1-light/l5": {
+      "quest": "Messages in Light (HS-ESS1 light)",
+      "where": "Level 5, card 1: The siren trick",
+      "title": "Doppler Effect",
+      "link": "https://www.youtube.com/watch?v=kdiHmSWI2Ks",
+      "channel": "Bozeman Science",
+      "start": 0,
+      "mode": "optional",
+      "note": "Why a moving source changes pitch, the same idea as redshift."
     }
   }
 }
