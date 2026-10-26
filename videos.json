@@ -33,32 +33,32 @@
     "hs-ess1-light/l3": {
       "quest": "Messages in Light (HS-ESS1 light)",
       "where": "Level 3, card 1: Electrons jump up, then fall back down",
-      "title": "The Bohr Atom",
-      "link": "https://www.youtube.com/watch?v=GhAn8xZQ-d8",
-      "channel": "Bozeman Science",
+      "title": "The Electron",
+      "link": "https://www.youtube.com/watch?v=rcKilE9CdaA",
+      "channel": "Crash Course Chemistry",
       "start": 0,
-      "mode": "optional",
-      "note": "Electrons jumping between energy levels. It goes a little beyond this level."
+      "mode": "required",
+      "note": "Energy levels, and how electrons give off light when they drop."
     },
     "hs-ess1-light/l4": {
       "quest": "Messages in Light (HS-ESS1 light)",
       "where": "Level 4, card 1: A pattern only one element can make",
-      "title": "Emission and Absorption Spectra",
-      "link": "https://www.youtube.com/watch?v=1uPyq63aRvg",
-      "channel": "Bozeman Science",
+      "title": "Bohr Model of the Hydrogen Atom",
+      "link": "https://www.youtube.com/watch?v=au2HCVn9IJI",
+      "channel": "Professor Dave Explains",
       "start": 0,
-      "mode": "optional",
-      "note": "Bright lines, dark lines, and why every element has its own pattern."
+      "mode": "required",
+      "note": "Hydrogen's electron drops and the colored lines they make."
     },
     "hs-ess1-light/l5": {
       "quest": "Messages in Light (HS-ESS1 light)",
-      "where": "Level 5, card 1: The siren trick",
-      "title": "Doppler Effect",
-      "link": "https://www.youtube.com/watch?v=kdiHmSWI2Ks",
-      "channel": "Bozeman Science",
+      "where": "Level 5, card 2: Redshift: the same trick with light",
+      "title": "How Do We Know the Universe Is Accelerating?",
+      "link": "https://www.youtube.com/watch?v=tXkBfkeJJ5c",
+      "channel": "Minute Physics",
       "start": 0,
-      "mode": "optional",
-      "note": "Why a moving source changes pitch, the same idea as redshift."
+      "mode": "required",
+      "note": "Astronomers use redshift to see how fast galaxies are moving away."
     }
   }
 }
