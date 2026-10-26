@@ -1,5 +1,5 @@
 {
-  "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start/end are seconds (leave 0/null for the whole video). mode is \"optional\" or \"required\".",
+  "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start is seconds to start at (0 = beginning). mode is \"required\" (locks that card's quick check until the student opens the video) or \"optional\". title and note show on the card.",
   "updated": "2026-10-26",
   "videos": {
     "test-1": {
@@ -8,6 +8,16 @@
       "start": 0,
       "end": null,
       "mode": "required"
+    },
+    "hs-ess1-light/l1": {
+      "quest": "Messages in Light (HS-ESS1 light)",
+      "where": "Level 1, card 1: Parts of a wave",
+      "title": "Wave Basics",
+      "link": "https://www.youtube.com/watch?v=mXpjwC_9LU4",
+      "channel": "MooMooMath and Science",
+      "start": 0,
+      "mode": "required",
+      "note": "Crest, trough, wavelength, frequency and amplitude, the words you just met."
     }
   }
 }
