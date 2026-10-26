@@ -60,7 +60,7 @@ code{font-size:.85em;background:var(--teal-soft);padding:1px 5px;border-radius:5
 </head>
 <body>
 <main>
-  <h1>Video embed test</h1>
+  <h1>Video embed test <span style="font-size:.9rem;color:var(--muted);font-weight:500">v2</span></h1>
   <p class="sub">Open this the same way students will (in Canva, signed in as a student). Each line below turns green, gold, or red.</p>
 
   <section class="card">
@@ -176,16 +176,48 @@ code{font-size:.85em;background:var(--teal-soft);padding:1px 5px;border-radius:5
     var vars = { rel:0, modestbranding:1, playsinline:1, cc_load_policy:1, start: v.start||0 };
     if(v.end) vars.end = v.end;
     if(location.origin && location.origin !== "null") vars.origin = location.origin;
-    if(player){ try{ player.destroy(); }catch(e){} player = null; $("player").outerHTML = '<div id="player"></div>'; }
+    tryHost(v, vars, 0, ++loadToken);
+  }
+
+  // Canva may block frames from some YouTube addresses. A blocked frame never
+  // reports an error, so each address gets a few seconds to say "ready".
+  var HOSTS = [
+    { url:"https://www.youtube.com",          name:"youtube.com" },
+    { url:"https://www.youtube-nocookie.com", name:"youtube-nocookie.com (privacy mode)" }
+  ];
+  var loadToken = 0, readyTimer = null, triedLog = [];
+  function freshSlot(){
+    if(player){ try{ player.destroy(); }catch(e){} player = null; }
+    var old = $("player"); var n = document.createElement("div"); n.id = "player";
+    old.parentNode.replaceChild(n, old);
+  }
+  function tryHost(v, vars, i, token){
+    if(token !== loadToken) return;
+    if(i === 0) triedLog = [];
+    if(i >= HOSTS.length){
+      freshSlot();
+      setRow("api","bad","YouTube player: blocked inside Canva","Tried "+triedLog.join(" and ")+". Canva refused both, so students will get the 'Watch on YouTube' button.");
+      setRow("vid","bad","This video: can't play here","The player is blocked by the page hosting the quest, not by the video.");
+      showFallback("Videos can't play inside this page.");
+      return;
+    }
+    var h = HOSTS[i]; triedLog.push(h.name);
+    freshSlot(); clearTimeout(readyTimer);
+    setRow("api","wait","YouTube player: trying "+h.name+"…","Waiting up to 7 seconds for it to start.");
+    readyTimer = setTimeout(function(){ if(token === loadToken) tryHost(v, vars, i+1, token); }, 7000);
     player = new YT.Player("player", {
-      host: "https://www.youtube-nocookie.com",
-      videoId: v.id, playerVars: vars,
+      host: h.url, videoId: v.id, playerVars: vars,
       events: {
+        onReady: function(){
+          if(token !== loadToken) return; clearTimeout(readyTimer);
+          setRow("api","ok","YouTube player: works via "+h.name+" ✓", i>0 ? "The first address was blocked, but this one works." : "Canva allows this player.");
+        },
         onStateChange: function(e){
           if(e.data === 1 && !started){ started = true;
             setRow("vid","ok","This video: playing ✓","Embedding and Restricted Mode both allow this one."); unlock("play"); }
         },
         onError: function(e){
+          clearTimeout(readyTimer);
           var why = ERR[e.data] || ("YouTube error "+e.data+".");
           setRow("vid","bad","This video: can't play (code "+e.data+")", why);
           showFallback(why);
@@ -221,7 +253,7 @@ code{font-size:.85em;background:var(--teal-soft);padding:1px 5px;border-radius:5
 
   window.onYouTubeIframeAPIReady = function(){
     apiReady = true; clearTimeout(apiTimer);
-    setRow("api","ok","YouTube player: loaded ✓","YouTube is reachable from this page.");
+    setRow("api","wait","YouTube player: script loaded…","Now checking whether Canva lets the player frame open.");
     listPromise.then(load);
   };
   var s = document.createElement("script");
