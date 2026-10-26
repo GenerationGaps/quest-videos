@@ -33,22 +33,22 @@
     "hs-ess1-light/l3": {
       "quest": "Messages in Light (HS-ESS1 light)",
       "where": "Level 3, card 1: Electrons jump up, then fall back down",
-      "title": "The Electron",
-      "link": "https://www.youtube.com/watch?v=rcKilE9CdaA",
-      "channel": "Crash Course Chemistry",
-      "start": 0,
-      "mode": "required",
-      "note": "Energy levels, and how electrons give off light when they drop."
-    },
-    "hs-ess1-light/l4": {
-      "quest": "Messages in Light (HS-ESS1 light)",
-      "where": "Level 4, card 1: A pattern only one element can make",
       "title": "Bohr Model of the Hydrogen Atom",
       "link": "https://www.youtube.com/watch?v=au2HCVn9IJI",
       "channel": "Professor Dave Explains",
       "start": 0,
       "mode": "required",
-      "note": "Hydrogen's electron drops and the colored lines they make."
+      "note": "Hydrogen's electron drops between energy levels and the colors of light they give off."
+    },
+    "hs-ess1-light/l4": {
+      "quest": "Messages in Light (HS-ESS1 light)",
+      "where": "Level 4, card 1: A pattern only one element can make",
+      "title": "Why Some of the Rainbow Is Missing",
+      "link": "https://www.youtube.com/watch?v=gVZwdYZqCUI",
+      "channel": "Be Smart",
+      "start": 0,
+      "mode": "required",
+      "note": "The dark lines in sunlight, and how scientists learned that every element has its own pattern."
     },
     "hs-ess1-light/l5": {
       "quest": "Messages in Light (HS-ESS1 light)",
