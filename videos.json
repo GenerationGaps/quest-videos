@@ -1,0 +1,13 @@
+{
+  "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start/end are seconds (leave 0/null for the whole video). mode is \"optional\" or \"required\".",
+  "updated": "2026-10-26",
+  "videos": {
+    "test-1": {
+      "title": "Electromagnetic Spectrum",
+      "link": "https://www.youtube.com/watch?v=OqCyNIrPjZ4",
+      "start": 0,
+      "end": null,
+      "mode": "required"
+    }
+  }
+}

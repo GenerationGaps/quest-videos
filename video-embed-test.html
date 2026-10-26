@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Embed Test</title>
+<style>
+:root{
+  --paper:#eaf4f2; --card:#ffffff; --ink:#0f2826; --muted:#4d6663; --line:#c9dedb;
+  --teal:#0b6e66; --teal-deep:#074a45; --teal-soft:#d3ece8;
+  --gold:#d99a1c; --gold-deep:#9a6a0b; --gold-soft:#fbeccb;
+  --good:#1d7a45; --good-soft:#d9f2e2; --bad:#c23b3b; --bad-soft:#fbe1e1;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0c1c1b; --card:#132a28; --ink:#e4f1ee; --muted:#9cb8b3; --line:#27443f;
+    --teal:#2bb3a6; --teal-deep:#17857b; --teal-soft:#173f3b;
+    --gold:#f0b940; --gold-deep:#b98714; --gold-soft:#3b3014;
+    --good:#4cc57e; --good-soft:#163a26; --bad:#f07373; --bad-soft:#431d1d;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.5rem;margin:0 0 4px;color:var(--teal-deep)}
+@media (prefers-color-scheme: dark){h1{color:var(--teal)}}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.card h2{font-size:1.05rem;margin:0 0 10px}
+.status{display:grid;gap:8px}
+.row{display:flex;gap:10px;align-items:flex-start}
+.dot{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:2px}
+.dot.wait{background:var(--line);color:var(--muted)}
+.dot.ok{background:var(--good-soft);color:var(--good)}
+.dot.warn{background:var(--gold-soft);color:var(--gold-deep)}
+.dot.bad{background:var(--bad-soft);color:var(--bad)}
+@media (prefers-color-scheme: dark){.dot.warn{color:var(--gold)}}
+.row b{display:block}
+.row span{color:var(--muted);font-size:.92rem}
+.video-tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--teal-soft);color:var(--teal-deep);margin-bottom:8px}
+@media (prefers-color-scheme: dark){.video-tag{color:var(--teal)}}
+.frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
+.frame > div, .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fallback{position:absolute;inset:0;display:none;background:#000 center/cover no-repeat}
+.fallback.show{display:block}
+.fallback .shade{position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.85));display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:#fff}
+.fallback p{margin:0 0 10px;font-size:.95rem}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.yt{background:#fff;color:#111;align-self:flex-start}
+.btn.go{background:var(--teal);color:#fff}
+.btn.go:disabled{background:var(--line);color:var(--muted);cursor:not-allowed}
+.check{margin-top:14px;padding:12px;border-radius:10px;background:var(--gold-soft);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.check.open{background:var(--good-soft)}
+.check p{margin:0;flex:1;min-width:200px;font-size:.95rem}
+.try{display:flex;gap:8px;flex-wrap:wrap}
+.try input{flex:1;min-width:200px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit}
+.note{font-size:.88rem;color:var(--muted);margin:10px 0 0}
+code{font-size:.85em;background:var(--teal-soft);padding:1px 5px;border-radius:5px}
+</style>
+</head>
+<body>
+<main>
+  <h1>Video embed test</h1>
+  <p class="sub">Open this the same way students will (in Canva, signed in as a student). Each line below turns green, gold, or red.</p>
+
+  <section class="card">
+    <h2>What's working</h2>
+    <div class="status">
+      <div class="row"><div class="dot wait" id="d-list">…</div><div><b id="t-list">Video list: checking…</b><span id="s-list">Looking for the live list on GitHub.</span></div></div>
+      <div class="row"><div class="dot wait" id="d-api">…</div><div><b id="t-api">YouTube player: loading…</b><span id="s-api">Waiting for YouTube to answer.</span></div></div>
+      <div class="row"><div class="dot wait" id="d-vid">…</div><div><b id="t-vid">This video: not started</b><span id="s-vid">Press play on the video below.</span></div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <span class="video-tag" id="mode-tag">Required video</span>
+    <h2 id="v-title">Loading video…</h2>
+    <div class="frame">
+      <div id="player"></div>
+      <div class="fallback" id="fallback">
+        <div class="shade">
+          <p id="fb-msg">This video can't play here.</p>
+          <a class="btn yt" id="fb-link" href="#" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="check" id="check">
+      <p id="check-msg">Checkpoint locked. Start the video to unlock it.</p>
+      <button class="btn go" id="check-btn" disabled>Go to checkpoint</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Try another video</h2>
+    <div class="try">
+      <input id="try-in" placeholder="Paste any YouTube link" autocomplete="off">
+      <button class="btn go" id="try-btn">Load it</button>
+    </div>
+    <p class="note">Use this to check whether a specific video gets past Restricted Mode before you add it to a quest. It only changes this page, not the list.</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  // ---- settings -------------------------------------------------------
+  var LIST_URL = "https://raw.githubusercontent.com/GenerationGaps/quest-videos/main/videos.json";
+  var SLOT = "test-1";
+  // Backup copy, used only if the live list can't be reached.
+  var BUILT_IN = {
+    "test-1": { title:"Electromagnetic Spectrum", link:"https://www.youtube.com/watch?v=OqCyNIrPjZ4", start:0, end:null, mode:"required" }
+  };
+  var API_TIMEOUT_MS = 9000;
+
+  // ---- helpers --------------------------------------------------------
+  function $(id){ return document.getElementById(id); }
+  function setRow(key, state, title, detail){
+    var d = $("d-"+key); d.className = "dot "+state;
+    d.textContent = {ok:"✓", warn:"!", bad:"✕", wait:"…"}[state];
+    $("t-"+key).textContent = title; $("s-"+key).textContent = detail;
+  }
+  function videoId(link){
+    if(!link) return null;
+    link = String(link).trim();
+    if(/^[A-Za-z0-9_-]{11}$/.test(link)) return link;
+    var m = link.match(/(?:v=|youtu\.be\/|\/embed\/|\/shorts\/|\/live\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : null;
+  }
+  var ERR = {
+    2:"The link has a typo or isn't a real video ID.",
+    5:"The browser couldn't play this video.",
+    100:"The video was removed or made private.",
+    101:"The creator turned off embedding for this video.",
+    150:"Blocked here. Usually the creator turned off embedding, or Restricted Mode is hiding this video.",
+    152:"YouTube refused to play it in this page (often a school filter or Restricted Mode).",
+    153:"YouTube couldn't tell which site this page is on, so it refused to play. This happens when the file is opened directly instead of from a website."
+  };
+
+  // ---- state ----------------------------------------------------------
+  var current = null, player = null, apiReady = false, unlocked = false, started = false;
+
+  function unlock(how){
+    if(unlocked) return; unlocked = true;
+    $("check").classList.add("open");
+    $("check-msg").textContent = how === "link"
+      ? "Unlocked because the YouTube button was used. (Fallback path works.)"
+      : "Unlocked. Students could move on to the checkpoint now.";
+    $("check-btn").disabled = false;
+  }
+  function resetCheckpoint(){
+    unlocked = false; started = false;
+    $("check").classList.remove("open");
+    $("check-btn").disabled = true;
+    var req = current && current.mode !== "optional";
+    $("mode-tag").textContent = req ? "Required video" : "Optional video";
+    $("check-msg").textContent = req ? "Checkpoint locked. Start the video to unlock it." : "Optional: students can skip this video.";
+    if(!req) { $("check-btn").disabled = false; unlocked = true; }
+  }
+  function showFallback(msg){
+    $("fallback").style.backgroundImage = current && current.id ? "url(https://i.ytimg.com/vi/"+current.id+"/hqdefault.jpg)" : "";
+    $("fb-msg").textContent = msg + " Students can still watch it on YouTube.";
+    $("fb-link").href = current && current.id ? "https://www.youtube.com/watch?v="+current.id+(current.start?"&t="+current.start:"") : "https://www.youtube.com";
+    $("fallback").classList.add("show");
+  }
+  function hideFallback(){ $("fallback").classList.remove("show"); }
+
+  $("fb-link").addEventListener("click", function(){ unlock("link"); });
+  $("check-btn").addEventListener("click", function(){ alert("In a real quest, the checkpoint question would open here."); });
+
+  // ---- player ---------------------------------------------------------
+  function load(v){
+    current = v; $("v-title").textContent = v.title || "Video";
+    resetCheckpoint(); hideFallback();
+    if(!v.id){ setRow("vid","bad","This video: bad link","The link in the list doesn't contain a YouTube video ID."); showFallback("This link isn't a YouTube video."); return; }
+    setRow("vid","wait","This video: ready","Press play. If it plays, Restricted Mode and embedding both allow it.");
+    if(!apiReady) return;
+    var vars = { rel:0, modestbranding:1, playsinline:1, cc_load_policy:1, start: v.start||0 };
+    if(v.end) vars.end = v.end;
+    if(location.origin && location.origin !== "null") vars.origin = location.origin;
+    if(player){ try{ player.destroy(); }catch(e){} player = null; $("player").outerHTML = '<div id="player"></div>'; }
+    player = new YT.Player("player", {
+      host: "https://www.youtube-nocookie.com",
+      videoId: v.id, playerVars: vars,
+      events: {
+        onStateChange: function(e){
+          if(e.data === 1 && !started){ started = true;
+            setRow("vid","ok","This video: playing ✓","Embedding and Restricted Mode both allow this one."); unlock("play"); }
+        },
+        onError: function(e){
+          var why = ERR[e.data] || ("YouTube error "+e.data+".");
+          setRow("vid","bad","This video: can't play (code "+e.data+")", why);
+          showFallback(why);
+        }
+      }
+    });
+  }
+
+  // ---- 1. video list --------------------------------------------------
+  var listPromise = fetch(LIST_URL+"?t="+Date.now(), {cache:"no-store"})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(data){
+      var v = data && data.videos && data.videos[SLOT];
+      if(!v) throw new Error("no \""+SLOT+"\" entry");
+      setRow("list","ok","Video list: live from GitHub ✓","Last updated "+(data.updated||"(no date)")+". Changes you make on GitHub will show up here without re-uploading.");
+      return v;
+    })
+    .catch(function(err){
+      var reason = /404/.test(err.message) ? "The public list isn't on GitHub yet (or the repo is private)."
+                 : /Failed to fetch|NetworkError|Load failed/i.test(err.message) ? "This page couldn't reach GitHub (blocked by Canva or a school filter, or offline)."
+                 : "The list couldn't be read ("+err.message+").";
+      setRow("list","warn","Video list: using built-in backup", reason+" The quest still works with its saved copy.");
+      return BUILT_IN[SLOT];
+    })
+    .then(function(v){ var c = Object.assign({}, v); c.id = videoId(v.link || v.id); return c; });
+
+  // ---- 2. YouTube player API ------------------------------------------
+  var apiTimer = setTimeout(function(){
+    if(apiReady) return;
+    setRow("api","bad","YouTube player: blocked","YouTube's player didn't load. Canva or a school filter may be blocking it. Students get the 'Watch on YouTube' button instead.");
+    listPromise.then(function(v){ current = v; $("v-title").textContent = v.title||"Video"; resetCheckpoint(); showFallback("The YouTube player is blocked here."); setRow("vid","bad","This video: can't play here","The player itself didn't load."); });
+  }, API_TIMEOUT_MS);
+
+  window.onYouTubeIframeAPIReady = function(){
+    apiReady = true; clearTimeout(apiTimer);
+    setRow("api","ok","YouTube player: loaded ✓","YouTube is reachable from this page.");
+    listPromise.then(load);
+  };
+  var s = document.createElement("script");
+  s.src = "https://www.youtube.com/iframe_api";
+  s.onerror = function(){ clearTimeout(apiTimer);
+    setRow("api","bad","YouTube player: blocked","The page couldn't load YouTube's player. Students get the 'Watch on YouTube' button instead.");
+    listPromise.then(function(v){ current = v; $("v-title").textContent = v.title||"Video"; resetCheckpoint(); showFallback("The YouTube player is blocked here."); setRow("vid","bad","This video: can't play here","The player itself didn't load."); });
+  };
+  document.head.appendChild(s);
+  listPromise.then(function(v){ if(!apiReady){ current = v; $("v-title").textContent = v.title||"Video"; resetCheckpoint(); } });
+
+  // ---- 3. try another link -------------------------------------------
+  $("try-btn").addEventListener("click", function(){
+    var id = videoId($("try-in").value);
+    if(!id){ $("try-in").value = ""; $("try-in").placeholder = "That doesn't look like a YouTube link. Try again."; return; }
+    load({ title:"Test video", id:id, start:0, end:null, mode:"required" });
+  });
+})();
+</script>
+</body>
+</html>
