@@ -1,6 +1,6 @@
 {
   "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start is seconds to start at (0 = beginning). mode is \"required\" (locks that card's quick check until the student opens the video) or \"optional\". title and note show on the card.",
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "videos": {
     "test-1": {
       "title": "Electromagnetic Spectrum",
@@ -59,6 +59,76 @@
       "start": 0,
       "mode": "required",
       "note": "Astronomers use redshift to see how fast galaxies are moving away."
+    },
+    "hs-ps1-4/l1": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 1 (Energy and Temperature), card 1: Energy shows up in many forms",
+      "title": "Forms of Energy",
+      "link": "https://www.youtube.com/watch?v=FX7T-QYTPho",
+      "channel": "MooMooMath and Science",
+      "start": 0,
+      "mode": "required",
+      "note": "The kinds of energy you can see or feel, the first big idea of this level."
+    },
+    "hs-ps1-4/l2": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 2 (Atoms, Molecules and Reactions), card 1: Atoms join into molecules",
+      "title": "What's the Difference between an Atom and a Molecule?",
+      "link": "https://www.youtube.com/watch?v=RbbOBPfH_uk",
+      "channel": "Tyler DeWitt",
+      "start": 0,
+      "mode": "required",
+      "note": "Atoms, molecules and the bonds that hold them together."
+    },
+    "hs-ps1-4/l3": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 3 (Hot or Cold?), card 1: Draw a boundary",
+      "title": "Exothermic vs Endothermic Chemical Reactions",
+      "link": "https://www.youtube.com/watch?v=-xgl-S7vH_k",
+      "channel": "MooMooMath and Science",
+      "start": 0,
+      "mode": "required",
+      "note": "Reactions that warm their surroundings and reactions that cool them."
+    },
+    "hs-ps1-4/l4": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 4 (Breaking Costs, Forming Pays), card 1: Bonds work like magnets",
+      "title": "Energy & Chemistry",
+      "link": "https://www.youtube.com/watch?v=GqtUWyDR1fg",
+      "channel": "Crash Course Chemistry",
+      "start": 0,
+      "mode": "required",
+      "note": "Energy stored in chemical bonds, and what happens to it when bonds break and form."
+    },
+    "hs-ps1-4/l5": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 5 (Energy Diagrams), card 1: Higher or lower?",
+      "title": "Endothermic and Exothermic Reactions",
+      "link": "https://www.youtube.com/watch?v=L-G7pLufXAo",
+      "channel": "Bozeman Science",
+      "start": 0,
+      "mode": "optional",
+      "note": "Energy diagrams for reactions that release or absorb energy. This one goes a little beyond the quest."
+    },
+    "hs-ps1-4/l6": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 6 (Tally the Bonds), card 1: Hydrogen burns: the ledger",
+      "title": "Enthalpy of Reaction",
+      "link": "https://www.youtube.com/watch?v=qD7PDOhqbpM",
+      "channel": "Bozeman Science",
+      "start": 0,
+      "mode": "optional",
+      "note": "Adding up bond energies to find a reaction's energy change. This one goes a little beyond the quest."
+    },
+    "hs-ps1-4/l7": {
+      "quest": "Hot Pack, Cold Cup (HS-PS1-4)",
+      "where": "Level 7 (Explain Both Packs), card 1: Run it backward",
+      "title": "Enthalpy",
+      "link": "https://www.youtube.com/watch?v=SV7U4yAXL5I",
+      "channel": "Crash Course Chemistry",
+      "start": 0,
+      "mode": "optional",
+      "note": "Uses a hand warmer as its example. This one goes a little beyond the quest."
     }
   }
 }
