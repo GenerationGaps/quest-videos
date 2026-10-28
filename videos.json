@@ -1,6 +1,6 @@
 {
   "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start is seconds to start at (0 = beginning). mode is \"required\" (locks that card's quick check until the student opens the video) or \"optional\". title and note show on the card.",
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "videos": {
     "test-1": {
       "title": "Electromagnetic Spectrum",
@@ -129,6 +129,46 @@
       "start": 0,
       "mode": "optional",
       "note": "Uses a hand warmer as its example. This one goes a little beyond the quest."
+    },
+    "hs-ess1-bigbang/l1": {
+      "quest": "The Big Bang (HS-ESS1-2)",
+      "where": "Level 1, card 1: What the Big Bang is",
+      "title": "Origins of the Universe 101",
+      "link": "https://www.youtube.com/watch?v=HdPzOWlLrbE",
+      "channel": "National Geographic",
+      "start": 0,
+      "mode": "required",
+      "note": "How the universe began and grew, from the first moment to today."
+    },
+    "hs-ess1-bigbang/l2": {
+      "quest": "The Big Bang (HS-ESS1-2)",
+      "where": "Level 2, card 2: Space itself is stretching",
+      "title": "Where Was The Big Bang?",
+      "link": "https://www.youtube.com/watch?v=W4c-gX9MT1Q",
+      "channel": "Minute Physics",
+      "start": 0,
+      "mode": "required",
+      "note": "Why the Big Bang didn't happen at one spot: space itself is stretching everywhere."
+    },
+    "hs-ess1-bigbang/l3": {
+      "quest": "The Big Bang (HS-ESS1-2)",
+      "where": "Level 3, card 1: Light from a cooling fog",
+      "title": "Picture of the Big Bang (a.k.a. Oldest Light in the Universe)",
+      "link": "https://www.youtube.com/watch?v=_mZQ-5-KYHw",
+      "channel": "Minute Physics",
+      "start": 0,
+      "mode": "required",
+      "note": "The cosmic microwave background: the oldest light there is."
+    },
+    "hs-ess1-bigbang/l4": {
+      "quest": "The Big Bang (HS-ESS1-2)",
+      "where": "Level 4, card 1: The universe's recipe",
+      "title": "Cosmology: A Big Bang and the Beginning of the Universe",
+      "link": "https://www.youtube.com/watch?v=0L_MvPLspdg",
+      "channel": "Professor Dave Explains",
+      "start": 0,
+      "mode": "required",
+      "note": "The evidence for the Big Bang, all in one place."
     }
   }
 }
