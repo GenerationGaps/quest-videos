@@ -1,6 +1,6 @@
 {
   "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start is seconds to start at (0 = beginning). mode is \"required\" (locks that card's quick check until the student opens the video) or \"optional\". title and note show on the card.",
-  "updated": "2026-10-28",
+  "updated": "2026-11-02",
   "videos": {
     "test-1": {
       "title": "Electromagnetic Spectrum",
@@ -169,6 +169,56 @@
       "start": 0,
       "mode": "required",
       "note": "The evidence for the Big Bang, all in one place."
+    },
+    "hs-ess1-stars/l1": {
+      "quest": "Star Factories (HS-ESS1-1, HS-ESS1-3)",
+      "where": "Level 1, card 1: From cloud to star",
+      "title": "Stars 101",
+      "link": "https://www.youtube.com/watch?v=EFO_bsg1sw8",
+      "channel": "National Geographic",
+      "start": 0,
+      "mode": "required",
+      "note": "How stars are born, shine and die, in a few minutes."
+    },
+    "hs-ess1-stars/l2": {
+      "quest": "Star Factories (HS-ESS1-1, HS-ESS1-3)",
+      "where": "Level 2, card 1: Three ways a nucleus can change",
+      "title": "Nuclear Reactions, Radioactivity, Fission and Fusion",
+      "link": "https://www.youtube.com/watch?v=fES21E0qebw",
+      "channel": "Professor Dave Explains",
+      "start": 0,
+      "mode": "required",
+      "note": "Fusion, fission and radioactive decay side by side: the three you'll learn to tell apart."
+    },
+    "hs-ess1-stars/l3": {
+      "quest": "Star Factories (HS-ESS1-1, HS-ESS1-3)",
+      "where": "Level 3, card 1: Reading the map",
+      "title": "The Largest Star in the Universe – Size Comparison",
+      "link": "https://www.youtube.com/watch?v=3mnSDifDSxQ",
+      "channel": "Kurzgesagt",
+      "start": 0,
+      "mode": "optional",
+      "note": "From red dwarfs to supergiants: see how different the stars on the H-R diagram really are."
+    },
+    "hs-ess1-stars/l4": {
+      "quest": "Star Factories (HS-ESS1-1, HS-ESS1-3)",
+      "where": "Level 4, card 1: Two life paths",
+      "title": "The Life and Death of Stars: White Dwarfs, Supernovae, Neutron Stars, and Black Holes",
+      "link": "https://www.youtube.com/watch?v=4xIQGbYur9Q",
+      "channel": "Professor Dave Explains",
+      "start": 0,
+      "mode": "required",
+      "note": "The two life paths: what a star's mass decides."
+    },
+    "hs-ess1-stars/l5": {
+      "quest": "Star Factories (HS-ESS1-1, HS-ESS1-3)",
+      "where": "Level 5, card 1: A star built like an onion",
+      "title": "What is a supernova?",
+      "link": "https://www.youtube.com/watch?v=8f63E6_4DtY",
+      "channel": "MysterySci",
+      "start": 0,
+      "mode": "required",
+      "note": "The explosion that spreads a star's elements into space."
     }
   }
 }
