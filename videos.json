@@ -221,17 +221,17 @@
       "note": "The explosion that spreads a star's elements into space."
     },
     "hs-ps2-1-motion/hook": {
-      "quest": "Bolt's Race (HS-PS2-1 Motion)",
-      "where": "Opening screen: the hook (no link yet; paste the Berlin 2009 race clip here and it appears)",
-      "title": "Usain Bolt's 9.58 s world record (Berlin 2009)",
+      "quest": "The Quarter-Mile Mystery (HS-PS2-1 Motion)",
+      "where": "Opening screen: the hook (no link yet; paste the Tesla Model S Plaid vs. McLaren 720S quarter-mile race clip here and it appears)",
+      "title": "Tesla Model S Plaid vs. McLaren 720S: quarter-mile drag race",
       "link": "",
       "channel": "",
       "start": 0,
       "mode": "optional",
-      "note": "The real race. Watch where Bolt is at the start, and where he pulls away."
+      "note": "The real race. Watch which car leads, and when."
     },
     "hs-ps2-1-motion/bi1a": {
-      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "quest": "The Quarter-Mile Mystery (HS-PS2-1 Motion)",
       "where": "Big Idea 1, Part A, Explain card: Two ways to say how far",
       "title": "Intro to vectors & scalars",
       "link": "https://www.youtube.com/watch?v=ihNZlp7iUHE",
@@ -241,7 +241,7 @@
       "note": "Why distance has no direction but displacement does."
     },
     "hs-ps2-1-motion/bi2a": {
-      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "quest": "The Quarter-Mile Mystery (HS-PS2-1 Motion)",
       "where": "Big Idea 2, Part A, Explain card: Speed and velocity",
       "title": "What is speed and velocity in physics?",
       "link": "https://www.youtube.com/watch?v=ukWpTQq13dw",
@@ -251,7 +251,7 @@
       "note": "Speed vs. velocity in about two minutes."
     },
     "hs-ps2-1-motion/bi3a": {
-      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "quest": "The Quarter-Mile Mystery (HS-PS2-1 Motion)",
       "where": "Big Idea 3, Part A, Explain card: Acceleration",
       "title": "What is Acceleration? (Physics in simple terms)",
       "link": "https://www.youtube.com/watch?v=J3SdZwMcWhA",
@@ -261,7 +261,7 @@
       "note": "Acceleration is any change in velocity: speed, direction, or both."
     },
     "hs-ps2-1-motion/bi4a": {
-      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "quest": "The Quarter-Mile Mystery (HS-PS2-1 Motion)",
       "where": "Big Idea 4, Part A, Explain card: The slope tells the story",
       "title": "Position/Velocity/Acceleration Part 2: Graphical Analysis",
       "link": "https://www.youtube.com/watch?v=bqf8m7xNvLg",
