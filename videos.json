@@ -1,6 +1,6 @@
 {
   "_how_to_edit": "Paste any YouTube link (or just the 11-character ID) into a video's \"link\". start is seconds to start at (0 = beginning). mode is \"required\" (locks that card's quick check until the student opens the video) or \"optional\". title and note show on the card.",
-  "updated": "2026-11-02",
+  "updated": "2026-11-17",
   "videos": {
     "test-1": {
       "title": "Electromagnetic Spectrum",
@@ -219,6 +219,56 @@
       "start": 0,
       "mode": "required",
       "note": "The explosion that spreads a star's elements into space."
+    },
+    "hs-ps2-1-motion/hook": {
+      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "where": "Opening screen: the hook (no link yet; paste the Berlin 2009 race clip here and it appears)",
+      "title": "Usain Bolt's 9.58 s world record (Berlin 2009)",
+      "link": "",
+      "channel": "",
+      "start": 0,
+      "mode": "optional",
+      "note": "The real race. Watch where Bolt is at the start, and where he pulls away."
+    },
+    "hs-ps2-1-motion/bi1a": {
+      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "where": "Big Idea 1, Part A, Explain card: Two ways to say how far",
+      "title": "Intro to vectors & scalars",
+      "link": "https://www.youtube.com/watch?v=ihNZlp7iUHE",
+      "channel": "Khan Academy",
+      "start": 0,
+      "mode": "required",
+      "note": "Why distance has no direction but displacement does."
+    },
+    "hs-ps2-1-motion/bi2a": {
+      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "where": "Big Idea 2, Part A, Explain card: Speed and velocity",
+      "title": "What is speed and velocity in physics?",
+      "link": "https://www.youtube.com/watch?v=ukWpTQq13dw",
+      "channel": "MooMooMath and Science",
+      "start": 0,
+      "mode": "required",
+      "note": "Speed vs. velocity in about two minutes."
+    },
+    "hs-ps2-1-motion/bi3a": {
+      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "where": "Big Idea 3, Part A, Explain card: Acceleration",
+      "title": "What is Acceleration? (Physics in simple terms)",
+      "link": "https://www.youtube.com/watch?v=J3SdZwMcWhA",
+      "channel": "MooMooMath and Science",
+      "start": 0,
+      "mode": "required",
+      "note": "Acceleration is any change in velocity: speed, direction, or both."
+    },
+    "hs-ps2-1-motion/bi4a": {
+      "quest": "Bolt's Race (HS-PS2-1 Motion)",
+      "where": "Big Idea 4, Part A, Explain card: The slope tells the story",
+      "title": "Position/Velocity/Acceleration Part 2: Graphical Analysis",
+      "link": "https://www.youtube.com/watch?v=bqf8m7xNvLg",
+      "channel": "Professor Dave Explains",
+      "start": 0,
+      "mode": "required",
+      "note": "How to read slopes on position-time and velocity-time graphs."
     }
   }
 }
